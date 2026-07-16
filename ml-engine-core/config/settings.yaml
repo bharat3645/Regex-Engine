@@ -1,0 +1,22 @@
+app:
+  name: "Hexa-Core PII Engine"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 8000
+
+weights:
+  layer1_layout: 0.1
+  layer2_ner: 0.3
+  layer3_validator: 0.2
+  layer4_adversarial: 0.2
+  layer5_llm: 0.2
+
+thresholds:
+  min_confidence: 0.7
+  entropy_threshold: 7.5
+  density_threshold: 0.3
+
+models:
+  spacy_model: "en_core_web_trf"
+  bert_model: "microsoft/deberta-v3-base"
+  embedding_model: "all-MiniLM-L6-v2"
