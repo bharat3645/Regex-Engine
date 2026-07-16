@@ -1,0 +1,23 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "Compliance Manager",
+  "outputfilename": "Compliance Manger RegeX",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "appicon": "build/favicon.ico",
+  "icon": "build/favicon.ico",
+  "author": {
+    "name": "",
+    "email": "1@example.com"
+  },
+  "win32manifest": "app.manifest",
+  "build:wails": "wails build -tags=re2_cgo",
+  "bind": [
+    {
+      "name": "re2",
+      "path": "./re2.dll"
+    }
+  ]
+}

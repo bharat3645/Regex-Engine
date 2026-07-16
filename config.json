@@ -1,0 +1,11 @@
+{
+  "root_dir": "D:\\Projects\\Regex\\files_to_scan",
+  "rules_dir": "./compliance_rules",
+  "num_workers": 8,
+  "output_file": "violations_report.json",
+  "log_level": "INFO",
+  "max_cpu_percentage": 20,
+  "pipeline_buffer_size": 300,
+  "scanner_buffer_size_mb": 50,
+  "gc_trigger_mb": 200
+}

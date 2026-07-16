@@ -1,0 +1,15 @@
+{
+  "root_dir": "",
+  "rules_dir": "./compliance_rules",
+  "output_file": "violations_report.json",
+  "log_file": "scan.log",
+  "log_level": "INFO",
+  "scanner_workers": 8,
+  "extractor_workers": 4,
+  "max_cpu_percentage": 80,
+  "pipeline_buffer_size": 1000,
+  "scanner_buffer_size_mb": 4,
+  "discovery_batch_size": 500,
+  "gc_trigger_mb": 1024,
+  "max_file_size_mb": 500
+}
