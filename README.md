@@ -18,7 +18,7 @@ Three cooperating parts live in this monorepo:
 | Supporting | `lineage/`, `events/`, `connectors/`, `governor/` (CPU cap from config), `stats/` (`gopsutil`), `analytics/`, `logger/`, `config/`, `types/` |
 | ML bridge | `client/ml_client.go` — client for the Python ML engine (gRPC / protobuf dependencies in `go.mod`) |
 
-**2. `ml-engine-core/`** — Python ML validation service ("Hexa-Core"): a 6-layer pipeline (layout analysis → NER → deterministic validators → adversarial filter → LLM semantic judge → confidence synthesis) for high-precision validation of PII findings. See [`ml-engine-core/README.md`](ml-engine-core/README.md).
+**2. `ml-engine-core/`** — Python ML validation service ("Hexa-Core"): a 6-layer pipeline (layout analysis → NER → deterministic validators → adversarial filter → semantic judge → confidence synthesis) for high-precision validation of PII findings. The "semantic judge" layer is designed to eventually call an LLM (Llama-3) but currently has no LLM wired up and always runs in heuristic-only mode. See [`ml-engine-core/README.md`](ml-engine-core/README.md).
 
 **3. `ocr_py/`** — Python OCR package.
 

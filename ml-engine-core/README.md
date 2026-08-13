@@ -9,7 +9,7 @@ This engine implements a 6-layer pipeline to validate PII with extreme precision
 2.  **NER (Named Entity Recognition)**: Uses Spacy/Transformers to extract entities.
 3.  **Deterministic Validator**: Regex, Luhn Check, Library Check.
 4.  **Adversarial Filter**: Entropy analysis and "Test Data" detection.
-5.  **Semantic Judge (LLM)**: Uses Llama-3 (via API/Local) for ambiguous cases.
+5.  **Semantic Judge (LLM)**: Designed to use Llama-3 (via API/Local) for ambiguous cases; no LLM client is wired up yet, so it currently always runs in heuristic-only mode (see `pipeline/layer5_llm.py`, which prints a warning on every use).
 6.  **Confidence Synthesizer**: Aggregates scores and generates Vector Embeddings.
 
 ## Setup

@@ -1,9 +1,18 @@
 class LLMJudge:
     """
     Layer 5: Semantic Judge
-    Uses Llama-3 (via vLLM or API) to reason about ambiguous cases.
+    Aspirationally designed to call Llama-3 (via vLLM or API) to reason about
+    ambiguous cases. No LLM client is wired up yet, so this layer always runs
+    in heuristic-only mode -- unlike Layer 2 (NER) and Layer 6 (embeddings),
+    which attempt a real model and only fall back on missing dependencies,
+    this layer never attempts a real call at all, so the warning below fires
+    unconditionally on every instantiation rather than being gated behind a
+    try/except.
     """
-    
+
+    def __init__(self):
+        print("Warning: Semantic Judge: no LLM configured, running in heuristic-only mode.")
+
     PROMPT_TEMPLATE = """
     Analyze the following text segment for Personally Identifiable Information (PII).
     Context: {context}
@@ -18,9 +27,12 @@ class LLMJudge:
         """
         Returns confidence score 0.0-1.0 from LLM.
         """
-        # In production: call self.client.generate(...)
-        
-        # Enhanced Heuristic Logic (when LLM is not connected):
+        # Not yet implemented: no LLM client exists to call here (e.g.
+        # self.client.generate(...) against vLLM/an API). See the class
+        # docstring and __init__ warning -- this always falls through to
+        # heuristics below, never a real model.
+
+        # Heuristic Logic (this layer is heuristic-only, see above):
         
         context_lower = context.lower()
         
