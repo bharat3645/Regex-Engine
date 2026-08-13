@@ -2,8 +2,8 @@
 package ocr
 
 import (
-	"Regex/logger"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/types"
 	"context"
 	"fmt"
 	"log" // Add this import for the standard log package

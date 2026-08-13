@@ -2,9 +2,9 @@
 package extractor
 
 import (
-	"Regex/config"
-	"Regex/logger"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/config"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/types"
 	"context"
 	"io"
 	"os"

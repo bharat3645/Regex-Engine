@@ -1,7 +1,7 @@
 package connectors
 
 import (
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/types"
 	"context"
 )
 

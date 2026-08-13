@@ -1,8 +1,8 @@
 package connectors
 
 import (
-	"Regex/database"
-	"Regex/logger"
+	"github.com/bharat3645/compliance-manager/database"
+	"github.com/bharat3645/compliance-manager/logger"
 	"fmt"
 )
 

@@ -2,9 +2,9 @@
 package engine
 
 import (
-	"Regex/logger"
-	"Regex/rules"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/rules"
+	"github.com/bharat3645/compliance-manager/types"
 	"fmt"
 
 	"github.com/grafana/regexp" // USE PURE GO, RELIABLE ALTERNATIVE

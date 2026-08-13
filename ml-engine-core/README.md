@@ -1,6 +1,6 @@
 # ML Engine Core
 
-The Hexa-Core Machine Learning Engine for the Regex Data Discovery System.
+The Hexa-Core Machine Learning Engine for the Compliance Manager data discovery system.
 
 ## Architecture
 This engine implements a 6-layer pipeline to validate PII with extreme precision:
@@ -27,8 +27,14 @@ This engine implements a 6-layer pipeline to validate PII with extreme precision
 
 3.  **Run Tests**:
     ```bash
-    python tests/test_pipeline.py
+    pip install -r requirements-test.txt   # lightweight deps only (no torch/spacy)
+    pytest tests/ -v
     ```
+    The test suite exercises `PipelineManager` and the deterministic layers
+    (layout, Luhn/SSN/email validation, adversarial filtering) directly and does
+    not require the optional heavy ML dependencies (`spacy`, `sentence-transformers`)
+    — those layers gracefully fall back to heuristics when the models aren't
+    installed, which is also what CI runs against.
 
 ## Configuration
 Adjust weights and thresholds in `config/settings.yaml`.

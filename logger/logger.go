@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"Regex/config"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/config"
+	"github.com/bharat3645/compliance-manager/types"
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )

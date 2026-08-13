@@ -1,7 +1,7 @@
 package analytics
 
 import (
-	"Regex/database"
+	"github.com/bharat3645/compliance-manager/database"
 	"context"
 	"fmt"
 )

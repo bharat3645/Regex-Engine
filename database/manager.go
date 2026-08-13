@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/types"
 
 	_ "github.com/mattn/go-sqlite3"
 )

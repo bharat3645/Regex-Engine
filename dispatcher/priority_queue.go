@@ -2,7 +2,7 @@
 package dispatcher
 
 import (
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/types"
 	"container/heap"
 )
 

@@ -7,10 +7,10 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"Regex/client" // For MLClient (Moved from core)
-	"Regex/config"
-	"Regex/engine"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/client" // For MLClient (Moved from core)
+	"github.com/bharat3645/compliance-manager/config"
+	"github.com/bharat3645/compliance-manager/engine"
+	"github.com/bharat3645/compliance-manager/types"
 )
 
 const (

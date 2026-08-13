@@ -15,6 +15,9 @@ class NERAnalyzer:
     """
     def __init__(self, model_name: str = "en_core_web_trf"):
         self.nlp = None
+        if spacy is None:
+            print("Warning: spacy is not installed. Running in Heuristic Fallback Mode.")
+            return
         try:
             self.nlp = spacy.load(model_name)
         except OSError:

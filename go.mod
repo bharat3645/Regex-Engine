@@ -1,4 +1,4 @@
-module Regex
+module github.com/bharat3645/compliance-manager
 
 go 1.24.3
 

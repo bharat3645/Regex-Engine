@@ -1,9 +1,9 @@
 package governor
 
 import (
-	"Regex/config"
-	"Regex/logger"
-	"Regex/stats"
+	"github.com/bharat3645/compliance-manager/config"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/stats"
 	"context"
 	"sync/atomic"
 	"time"

@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ml-engine-tests:
+    name: ml-engine-core pytest
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ml-engine-core
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install test dependencies
+        run: pip install -r requirements-test.txt
+
+      - name: Run pytest
+        run: pytest tests/ -v
+
+  go-build:
+    name: Go build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+
+      - name: Build non-UI packages
+        # main.go embeds frontend/dist via go:embed, which only exists after
+        # `wails build` runs the frontend build. CI checks that the Go module
+        # itself (imports, package layout) is sound without requiring the
+        # full Wails/Node toolchain.
+        run: |
+          go build ./core/... ./engine/... ./database/... ./analytics/... \
+            ./client/... ./connectors/... ./dispatcher/... ./extractor/... \
+            ./governor/... ./lineage/... ./logger/... ./ocr/... \
+            ./pipeline/... ./scanner/... ./sorter/... ./stats/... \
+            ./rules/... ./types/... ./events/... ./checksum/... \
+            ./searcher/... ./config/...
+
+      - name: Vet
+        run: |
+          go vet ./core/... ./engine/... ./database/... ./analytics/... \
+            ./client/... ./connectors/... ./dispatcher/... ./extractor/... \
+            ./governor/... ./lineage/... ./logger/... ./ocr/... \
+            ./pipeline/... ./scanner/... ./sorter/... ./stats/... \
+            ./rules/... ./types/... ./events/... ./checksum/... \
+            ./searcher/... ./config/...

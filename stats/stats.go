@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"Regex/logger"
+	"github.com/bharat3645/compliance-manager/logger"
 	"os"
 	"path/filepath"
 	"sync"

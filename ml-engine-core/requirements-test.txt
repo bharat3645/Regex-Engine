@@ -1,0 +1,10 @@
+# Minimal dependencies needed to run `pytest tests/` without the heavy
+# optional ML stack (torch / transformers / spacy / xgboost /
+# sentence-transformers) in requirements.txt. Those libraries are optional at
+# runtime -- the NER (layer2) and embedding (layer6) layers fall back to
+# heuristics / dummy vectors when they aren't installed -- so CI installs
+# just this file instead of the full requirements.txt.
+pydantic>=2.5.0
+pyyaml
+numpy
+pytest>=8.0.0

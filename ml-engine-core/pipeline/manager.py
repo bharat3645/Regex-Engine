@@ -5,7 +5,7 @@ from .layer3_validator import DeterministicValidator
 from .layer4_adversarial import AdversarialFilter
 from .layer5_llm import LLMJudge
 from .layer6_synthesizer import ConfidenceSynthesizer
-from ..api.schemas import PIIContext, ValidatedMatch, LayerResult
+from api.schemas import PIIContext, ValidatedMatch, LayerResult
 
 class PipelineManager:
     def __init__(self, config_path: str = "config/settings.yaml"):

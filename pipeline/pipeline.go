@@ -1,7 +1,7 @@
 // File: pipeline/pipeline.go
 package pipeline
 
-import "Regex/types"
+import "github.com/bharat3645/compliance-manager/types"
 
 // Channels holds all the channels used in the pipeline.
 type Channels struct {

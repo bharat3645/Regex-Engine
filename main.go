@@ -2,11 +2,11 @@
 package main
 
 import (
-	"Regex/config"
-	"Regex/core"
-	"Regex/database"
-	"Regex/logger"
-	"Regex/stats"
+	"github.com/bharat3645/compliance-manager/config"
+	"github.com/bharat3645/compliance-manager/core"
+	"github.com/bharat3645/compliance-manager/database"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/stats"
 	"context"
 	"embed"
 	"fmt"

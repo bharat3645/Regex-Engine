@@ -1,10 +1,10 @@
 package connectors
 
 import (
-	"Regex/checksum"
-	"Regex/database"
-	"Regex/logger"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/checksum"
+	"github.com/bharat3645/compliance-manager/database"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/types"
 	"context"
 	"io/fs"
 	"os"

@@ -2,8 +2,8 @@
 package dispatcher
 
 import (
-	"Regex/logger"
-	"Regex/types"
+	"github.com/bharat3645/compliance-manager/logger"
+	"github.com/bharat3645/compliance-manager/types"
 	"container/heap"
 	"context"
 	"sync"

@@ -1,14 +1,12 @@
 # Compliance Manager
 
-> **Repo name note:** this repository is pending a rename. Despite the current name (`Regex-Engine`), it is **not** a standalone regular-expression engine — it contains a desktop data-discovery / PII-compliance scanning application in which regex rule matching is one component among many.
-
 A desktop application (Go + [Wails v2](https://wails.io), window title "Compliance Manager") that scans a configured directory tree for PII and compliance violations. It extracts text from documents, matches it against rule definitions, scores risk, and stores results in a local SQLite database, which the UI presents as a browsable file hierarchy with per-node risk scores and data-lineage edges (e.g. "CopyOf" relations between files).
 
 ## Architecture
 
 Three cooperating parts live in this monorepo:
 
-**1. Go desktop app** (repo root — module `Regex`, Go 1.24) — the Wails v2 shell plus the scanning engine:
+**1. Go desktop app** (repo root — module `github.com/bharat3645/compliance-manager`, Go 1.24) — the Wails v2 shell plus the scanning engine:
 
 | Area | Packages |
 |---|---|
@@ -48,4 +46,4 @@ Configuration is in `config.json`: scan root (`root_dir`), rules directory, work
 
 ## License
 
-No license file yet — all rights reserved until one is added.
+MIT — see [LICENSE](LICENSE).

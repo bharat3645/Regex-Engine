@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse
 import uvicorn
 import os
 import structlog
-from .schemas import ScanRequest, ScanResponse
-from ..pipeline.manager import PipelineManager
+from api.schemas import ScanRequest, ScanResponse
+from pipeline.manager import PipelineManager
 
 # Setup Structured Logging
 structlog.configure(

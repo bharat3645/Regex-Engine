@@ -1,0 +1,18 @@
+# Go
+/frontend/dist/
+*.exe
+*.exe~
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.venv_test/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
