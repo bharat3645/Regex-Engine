@@ -28,7 +28,10 @@ jobs:
 
   go-build:
     name: Go build
-    runs-on: ubuntu-latest
+    # This is a Windows desktop app (Wails + app.manifest) and ocr/ocr_manager.go
+    # uses syscall.SysProcAttr.HideWindow, a Windows-only struct field, so the
+    # module only compiles on Windows -- matches development target per README.
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -40,20 +43,9 @@ jobs:
         # main.go embeds frontend/dist via go:embed, which only exists after
         # `wails build` runs the frontend build. CI checks that the Go module
         # itself (imports, package layout) is sound without requiring the
-        # full Wails/Node toolchain.
-        run: |
-          go build ./core/... ./engine/... ./database/... ./analytics/... \
-            ./client/... ./connectors/... ./dispatcher/... ./extractor/... \
-            ./governor/... ./lineage/... ./logger/... ./ocr/... \
-            ./pipeline/... ./scanner/... ./sorter/... ./stats/... \
-            ./rules/... ./types/... ./events/... ./checksum/... \
-            ./searcher/... ./config/...
+        # full Wails/Node toolchain. One line (no shell line-continuation)
+        # since this runs under PowerShell on windows-latest.
+        run: go build ./core/... ./engine/... ./database/... ./analytics/... ./client/... ./connectors/... ./dispatcher/... ./extractor/... ./governor/... ./lineage/... ./logger/... ./ocr/... ./pipeline/... ./scanner/... ./sorter/... ./stats/... ./rules/... ./types/... ./events/... ./checksum/... ./searcher/... ./config/...
 
       - name: Vet
-        run: |
-          go vet ./core/... ./engine/... ./database/... ./analytics/... \
-            ./client/... ./connectors/... ./dispatcher/... ./extractor/... \
-            ./governor/... ./lineage/... ./logger/... ./ocr/... \
-            ./pipeline/... ./scanner/... ./sorter/... ./stats/... \
-            ./rules/... ./types/... ./events/... ./checksum/... \
-            ./searcher/... ./config/...
+        run: go vet ./core/... ./engine/... ./database/... ./analytics/... ./client/... ./connectors/... ./dispatcher/... ./extractor/... ./governor/... ./lineage/... ./logger/... ./ocr/... ./pipeline/... ./scanner/... ./sorter/... ./stats/... ./rules/... ./types/... ./events/... ./checksum/... ./searcher/... ./config/...
